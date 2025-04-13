@@ -55,5 +55,5 @@ struct server* new_server(int fd);
 void free_server(struct server *server);
 void close_and_free_server(EV_P_ struct server *server);
 void set_config(const char *server, const char *remote_port, const char* password, const char* method);
-int local_main();
+int local_main2();
 

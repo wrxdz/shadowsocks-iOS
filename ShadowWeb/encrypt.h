@@ -1,7 +1,7 @@
 #pragma once
 
 #import <stdint.h>
-#import <openssl/evp.h>
+#import <OpenSSL/evp.h>
 
 struct encryption_ctx {
     EVP_CIPHER_CTX* ctx;

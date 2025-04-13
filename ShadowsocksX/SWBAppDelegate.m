@@ -11,6 +11,7 @@
 #import "SWBQRCodeWindowController.h"
 #import "SWBAppDelegate.h"
 #import "GCDWebServer.h"
+#import "GCDWebServerDataResponse.h"
 #import "ShadowsocksRunner.h"
 #import "ProfileManager.h"
 #import "AFNetworking.h"

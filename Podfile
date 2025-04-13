@@ -2,15 +2,12 @@
 # platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 # use_frameworks!
+platform :ios, '9.0'
 
-pod 'libsodium', '~> 1.0.3'
+#pod 'libsodium', '~> 1.0.3'
 pod 'OpenSSL-Universal'
 
 target 'shadowsocks' do
-
-end
-
-target 'libshadowsocks' do
 
 end
 
@@ -18,7 +15,13 @@ target 'ShadowsocksX' do
 
 end
 
-target 'shadowsocks_sysconf' do
+#target 'libshadowsocks' do
+#
+#end
+#
 
-end
+#
+#target 'shadowsocks_sysconf' do
+#
+#end
 

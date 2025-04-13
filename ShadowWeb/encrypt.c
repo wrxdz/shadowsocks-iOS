@@ -1,8 +1,8 @@
 #include <sys/socket.h>
-#include <openssl/rand.h>
 #include <strings.h>
-#include <openssl/md5.h>
 #include <sodium.h>
+#include <OpenSSL/md5.h>
+#include <OpenSSL/rand.h>
 #include "local.h"
 #include "table.h"
 #include "encrypt.h"
@@ -38,7 +38,7 @@ const char *shadowsocks_encryption_names[] = {
         "rc4-md5",
         "salsa20",
         "chacha20",
-        "aes-256-gcm",
+//        "aes-256-gcm",
         "aes-256-cfb",
         "aes-192-cfb",
         "aes-128-cfb",
@@ -86,8 +86,8 @@ void cipher_update(struct encryption_ctx *ctx, unsigned char *out, size_t *outle
             crypto_stream_chacha20_xor_ic(sodium_buf, sodium_buf, padding + inlen, ctx->iv, ctx->ic, _key);
         } else if (_method == ENCRYPTION_AES_256_GCM) {
             //crypto_aead_aes256gcm_encryp
-            crypto_aead_aes256gcm_encrypt(<#unsigned char *c#>, <#unsigned long long *clen_p#>, <#const unsigned char *m#>, <#unsigned long long mlen#>, <#const unsigned char *ad#>, <#unsigned long long adlen#>, <#const unsigned char *nsec#>, <#const unsigned char *npub#>, <#const unsigned char *k#>)
-            crypto_aead_aes256gcm_encrypt_afternm(<#unsigned char *c#>, <#unsigned long long *clen_p#>, <#const unsigned char *m#>, <#unsigned long long mlen#>, <#const unsigned char *ad#>, <#unsigned long long adlen#>, <#const unsigned char *nsec#>, <#const unsigned char *npub#>, <#const crypto_aead_aes256gcm_state *ctx_#>)
+//            crypto_aead_aes256gcm_encrypt(<#unsigned char *c#>, <#unsigned long long *clen_p#>, <#const unsigned char *m#>, <#unsigned long long mlen#>, <#const unsigned char *ad#>, <#unsigned long long adlen#>, <#const unsigned char *nsec#>, <#const unsigned char *npub#>, <#const unsigned char *k#>)
+//            crypto_aead_aes256gcm_encrypt_afternm(<#unsigned char *c#>, <#unsigned long long *clen_p#>, <#const unsigned char *m#>, <#unsigned long long mlen#>, <#const unsigned char *ad#>, <#unsigned long long adlen#>, <#const unsigned char *nsec#>, <#const unsigned char *npub#>, <#const crypto_aead_aes256gcm_state *ctx_#>)
         }
         *outlen = inlen;
         memcpy(out, sodium_buf + padding, inlen);
@@ -208,7 +208,7 @@ void cleanup_encryption(struct encryption_ctx *ctx) {
 }
 
 void config_encryption(const char *password, const char *method) {
-    SSLeay_add_all_algorithms();
+    OpenSSL_add_all_algorithms();
     sodium_init();
     _method = encryption_method_from_string(method);
     if (_method == ENCRYPTION_TABLE) {

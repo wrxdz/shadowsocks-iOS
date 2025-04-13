@@ -573,7 +573,7 @@ void set_config(const char *server, const char *remote_port, const char* passwor
     config_encryption(password, method);
 }
 
-int local_main ()
+int local_main2 ()
 {
     char * port = "1080";
 

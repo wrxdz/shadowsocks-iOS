@@ -1,6 +1,6 @@
 #import <stdint.h>
-#import <openssl/md5.h>
-#import <openssl/evp.h>
+#import <OpenSSL/md5.h>
+#import <OpenSSL/evp.h>
 #include "table.h"
 
 

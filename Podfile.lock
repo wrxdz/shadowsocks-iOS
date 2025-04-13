@@ -1,20 +1,16 @@
 PODS:
-  - libsodium (1.0.12)
-  - OpenSSL-Universal (1.0.2.13)
+  - OpenSSL-Universal (1.1.1900)
 
 DEPENDENCIES:
-  - libsodium (~> 1.0.3)
   - OpenSSL-Universal
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - libsodium
+  trunk:
     - OpenSSL-Universal
 
 SPEC CHECKSUMS:
-  libsodium: 9a8faa5ef2fa0d2d57bd7f7d79bf8fb7c1a9f0ea
-  OpenSSL-Universal: 401888162f11c33ebbd46f782d9229da35c61327
+  OpenSSL-Universal: 84efb8a29841f2764ac5403e0c4119a28b713346
 
-PODFILE CHECKSUM: 1ff306279b1e6513e8c47a333d4aef289cfea162
+PODFILE CHECKSUM: 723764d94c74e4063ebe95b171199eb965e8c46e
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.16.2

@@ -23,7 +23,7 @@
 
 + (BOOL)runProxy {
     if (![ShadowsocksRunner settingsAreNotComplete]) {
-        local_main();
+        local_main2();
         return YES;
     } else {
         NSLog(@"warning: settings are not complete");
